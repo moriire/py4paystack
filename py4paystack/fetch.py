@@ -1,4 +1,10 @@
-
+import requests
+import uuid
+import settings
+import errors
+endpoint="https://api.paystack.co/transaction/initialize"
+GET, POST=requests.get, requests.post
+headers=settings.headers
 class Transaction:
     """
     For Verifying Transactions Before giving value to your customer, you \
@@ -7,14 +13,13 @@ class Transaction:
     ref: reference code
     ref(string) --> Unique transaction reference. It is a one-time key generated after initializing transaction.
     """
-    def __init__(self, id='283868400'):
+    def __init__(self, id='39415032'):
         self.id=id
-        
-    def __bool__(self):
-        req=GET("https://api.paystack.co/transaction/:"+id, headers=headers)
-        response=req.json()
-        #errors.accessValidity(req.status_code)
-        if req.status_code==200:
-            return response['status']
-        else:
-            return response
+        self.req=GET("https://api.paystack.co/transaction/:"+id, headers=headers)
+    def __comp__(self):
+        if self.req.status_code==200: return response['status']
+        else: return response
+
+    def json(self):
+        response=self.req.json()
+
