@@ -23,11 +23,8 @@ class Transaction:
         if not self.data:
             self.data["perPage"]=50
             self.data["page"]=1
-        self.req=GET("https://api.paystack.co/transaction", json=self.data, headers=headers)
+        self.req=GET("https://api.paystack.co/transaction", headers=headers)
         
-    def __dict__(self):
+    def json(self):
         data=self.req.json()
         return data['data'][0]
-
-x=Transaction()
-print(dict(x))
