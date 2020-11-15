@@ -1,11 +1,20 @@
-class Auth:
+import requests
+import uuid
+import settings
+import errors
+endpoint="https://api.paystack.co/transaction/initialize"
+GET, POST=requests.get, requests.post
+headers=settings.headers
+r_url=settings.r_url
+po_all=settings.po_all
+class Authorization:
     def __init__(self, redirect_url=r_url,payment_options=None, ref=None, currency=None):
         self.redirect_url=redirect_url
         self.payment_options=payment_options or po_all
-        self.currency=currency or 'NGN'
-        self.ref=ref or uuid.uuid4().hex
+        self.currency=currency if currency else 'NGN'
+        self.ref=ref if ref else uuid.uuid4().hex
         
-    def getLink(self, amount, email, authorization_code=None, **kwargs):
+    def pay(self, amount, email, authorization_code, **kwargs):
         """
         kwargs:
         amount(string): amount to be charged
@@ -29,8 +38,6 @@ class Auth:
         req=POST("https://api.paystack.co/transaction/charge_authorization", headers=headers, json=data)
         response=req.json()
         if req.status_code==200:
-            return response['data']['authorization_url']
+            return response['data']['status']
         else:
             return response
-        
-
