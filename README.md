@@ -1,11 +1,10 @@
 # py4paystack
-[![N|Solid](https://cldup.com/dTxpPi
-9lDf.thumb.png)](https://nodesource.
-com/products/nsolid)
-[![Build Status](https://travis-ci.o
-rg/joemccann/dillinger.svg?branch=ma
-ster)](https://travis-ci.org/joemcca
-nn/dillinger)
+
+[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
+
 py4paystack is a python sdk for
 connecting to paystack payment sol
 It currently supports:
