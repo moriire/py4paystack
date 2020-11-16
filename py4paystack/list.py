@@ -6,9 +6,6 @@ endpoint="https://api.paystack.co/transaction/initialize"
 GET, POST=requests.get, requests.post
 
 headers=settings.headers
-r_url=settings.r_url
-po_all=settings.po_all
-
 class Transaction:
     """
     List transactions carried out on your integration.
