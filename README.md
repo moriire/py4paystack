@@ -13,26 +13,19 @@ It currently supports:
   
 - [payment Verification]("paystack.com") - Confirm the status of a transaction
 
-- [Charge authorization]() - All
-  authorizations marked as reusable
-  can be charged with this endpoint
-  whenever you need to recieve
-  payments.
-- [transfer listings]() - List
-  transactions carried out on your
-  integration.
+- [Charge authorization]() - All authorizations marked as reusable can be charged with this endpoint whenever you need to recieve payments.
+
+- [transfer listings]() - List transactions carried out on your integration.
+
 - transaction fetching
+
 ### Installation
 ```sh
-python3 -m pip install --upgrade
-py4paystack
+python3 -m pip install --upgrade py4paystack
 ```
 For production environments...
 ```sh
 cd ~/my-project-dir
-echo "export SECRET_KEY=secretvalue"
->> .env
-echo "export
-PUBLIC_SECRET=othersecretkeys" >>
-.env
+echo "export SECRET_KEY=secretvalue">> .env
+echo "export PUBLIC_SECRET=othersecretkeys" >>.env
 ```
