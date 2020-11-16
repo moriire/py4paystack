@@ -11,20 +11,15 @@ po_all=settings.po_all
 
 class Transaction:
     """
-    For Verifying Transactions Before giving value to your customer, you 
-    should verify the status of the transaction by passing the reference to the API.
+    List transactions carried out on your integration.
     args:
     ref: reference code
     ref(string) --> Unique transaction reference. It is a one-time key generated after initializing transaction.
     """
     
-    def __init__(self, **kwargs):
-        self.data=kwargs
-        if not self.data:
-            self.data["perPage"]=50
-            self.data["page"]=1
-        self.req=GET("https://api.paystack.co/transaction", headers=headers)
-        
+    def __init__(self, perPage = None, page = None, **kwargs):
+        self.data=kwargs:
+        self.req=GET("https://api.paystack.co/transaction", json=self.data, headers=headers) if self.data else GET("https://api.paystack.co/transaction", json=self.data, headers=headers)
     def json(self):
         data=self.req.json()
         return data['data'][0]
