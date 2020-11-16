@@ -9,16 +9,10 @@ py4paystack is a python sdk for
 connecting to paystack payment sol
 It currently supports:
 - [Payment
-  Initialization]("https://paystack.
-  com/docs/api/#transaction-initiali
-  ze") - Initialize a transaction
-  from your backend through the
-  generation of a secure payment
-  link
-- [payment
-  Verification]("paystack.com") -
-  Confirm the status of a
-  transaction
+  Initialization]("https://paystack.com/docs/api/#transaction-initialize") - Initialize a transaction from your backend through the generation of a secure payment link
+  
+- [payment Verification]("paystack.com") - Confirm the status of a transaction
+
 - [Charge authorization]() - All
   authorizations marked as reusable
   can be charged with this endpoint
