@@ -13,8 +13,8 @@ class Transaction:
     """
     List transactions carried out on your integration.
     args:
-    ref: reference code
-    ref(string) --> Unique transaction reference. It is a one-time key generated after initializing transaction.
+    perPage(type:int, required:False) --> Unique transaction reference. It is a one-time key generated after initializing transaction.
+    page(type:int, required:False) -->
     """
     
     def __init__(self, perPage = None, page = None, **kwargs):
